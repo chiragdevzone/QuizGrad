@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
@@ -14,9 +15,11 @@ const LandingPage = () => {
           We help you prepare for exams and quizes
         </p>
         <div className="flex">
-          <button className="mr-2 p-2 bg-app-yellow text-app-white">
-            Start solving
-          </button>
+          <Link to="/dashboard">
+            <button className="mr-2 p-2 bg-app-yellow text-app-white">
+              Start solving
+            </button>
+          </Link>
           <Link to="/howitworks">
             <button className="mx-2 p-2 text-app-yellow border-2 border-app-yellow">
               Know more

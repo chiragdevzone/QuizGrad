@@ -9,6 +9,7 @@ export default {
       "app-small-slate": "#E0E0E0",
       "app-paragraph-slate": "#828282",
       "app-white": "#FFFFFF",
+      "app-error-red": "#cc0000",
     },
   },
   plugins: [],
