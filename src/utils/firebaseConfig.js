@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCinlYkhjHeZAstlOdFKhiWovIBCO5AsBc",
-  authDomain: "quizgrad-14393.firebaseapp.com",
-  projectId: "quizgrad-14393",
-  storageBucket: "quizgrad-14393.firebasestorage.app",
-  messagingSenderId: "983968940204",
-  appId: "1:983968940204:web:99ff8a7f40382c0a9b1f09",
-  measurementId: "G-G1LLFYEY1S",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { show, hide } from "../utils/topicSlice";
 import Tag from "../components/Tag";
+import { model } from "../utils/geminiConfig";
+import { addMcqs } from "../utils/mcqsSlice";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -20,7 +22,46 @@ const LandingPage = () => {
     }
   };
 
-  const handleQuiz = () => {
+  const handleQuiz = async () => {
+    const prompt = `I have an array of tags that I will provide to you. Please generate 10 multiple-choice questions related to those tags. The response must be a JSON object with a single key named \`questions\`. The \`questions\` key should hold an array of objects. Each object should have the following keys: \`questionNumber\`, \`questionText\`, \`options\` (an array of 4 strings), and \`correctOption\` (a string representing the correct answer).
+
+Here is an example of what I expect:
+
+{
+  "questions": [
+    {
+      "questionNumber": 1,
+      "questionText": "What is the capital of France?",
+      "options": ["London", "Paris", "Berlin", "Madrid"],
+      "correctOption": "Paris"
+    },
+    {
+      "questionNumber": 2,
+      "questionText": "Who painted the Mona Lisa?",
+      "options": ["Michelangelo", "Raphael", "Leonardo da Vinci", "Donatello"],
+      "correctOption": "Leonardo da Vinci"
+    }
+  ]
+}
+
+
+Please ensure that the \`correctOption\` for each question is one of the \`options\` provided, and that the output is valid JSON no extra tokens. The tags array will be given after this message, so here is the tag array: ${JSON.stringify(
+      tags
+    )}`;
+
+    const result = await model.generateContent(prompt);
+
+    const actualResult = result.response.text();
+    const regex = /{[\s\S]*}/;
+    const matched = actualResult.match(regex);
+    if (matched) {
+      const resultArray = JSON.parse(matched[0]);
+
+      dispatch(addMcqs(resultArray.questions));
+    } else {
+      console.log("json not found ");
+    }
+
     dispatch(hide());
     navigate("/dashboard");
   };

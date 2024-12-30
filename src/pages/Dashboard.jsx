@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { showS, hideS } from "../utils/topicSlice";
 import { markAttempt, resetAttemptAll } from "../utils/attemptSlice";
+import { resetMcqsAll } from "../utils/mcqsSlice";
+import { resetTagAll } from "../utils/tagSlice";
 
 const Dashboard = () => {
   const showScore = useSelector((state) => state.topic.showScore);
@@ -66,7 +68,7 @@ const Dashboard = () => {
       >
         {isAttempt[questionNum] ? (
           <p className="w-80 mx-auto text-center bg-app-green text-app-white p-4">
-            Question attempt
+            Question attempted
           </p>
         ) : (
           <p className="w-56 mx-auto text-center bg-app-yellow text-app-white p-4">
@@ -132,6 +134,8 @@ const Dashboard = () => {
               onClick={() => {
                 dispatch(hideS());
                 dispatch(resetAttemptAll());
+                dispatch(resetMcqsAll());
+                dispatch(resetTagAll());
                 navigate("/");
               }}
               className="absolute py-3 px-6 bg-app-yellow text-app-white bottom-0 right-4"

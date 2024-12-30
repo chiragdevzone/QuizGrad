@@ -13,8 +13,12 @@ const tagSlice = createSlice({
     removeTag: (state, action) => {
       state.tags = state.tags.filter((item) => item !== action.payload);
     },
+
+    resetTagAll: (state) => {
+      state.tags = [];
+    },
   },
 });
 
-export const { addTag, removeTag } = tagSlice.actions;
+export const { addTag, removeTag, resetTagAll } = tagSlice.actions;
 export default tagSlice.reducer;

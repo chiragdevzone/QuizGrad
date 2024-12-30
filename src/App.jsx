@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import HowItWorks from "./pages/HowItWorks";
@@ -7,9 +7,9 @@ import Features from "./pages/Features";
 import AboutUs from "./pages/AboutUs";
 import LoginPage from "./pages/LoginPage";
 import { useSelector } from "react-redux";
-import Dashboard from "./pages/Dashboard";
 const App = () => {
   const user = useSelector((store) => store.auth.user);
+  const Dashboard = lazy(() => import("./pages/Dashboard"));
 
   return (
     <BrowserRouter>
@@ -21,7 +21,16 @@ const App = () => {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route
             path="/dashboard"
-            element={user ? <Dashboard /> : <Navigate to="/login" />}
+            element={
+              user ? (
+                <Suspense fallback={<h2>Loading...</h2>}>
+                  {" "}
+                  <Dashboard />{" "}
+                </Suspense>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
           />
         </Route>
         <Route path="/login" element={<LoginPage />} />
