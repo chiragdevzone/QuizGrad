@@ -60,9 +60,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="w-full h-[75vh] relative ">
+    <div className="w-full lg:h-[75vh] h-[100vh] relative  ">
       <div
-        className={`flex flex-col justify-between h-[75vh] w-full ${
+        className={`flex flex-col justify-between h-[75vh]  w-full ${
           showScore && "blur-sm pointer-events-none"
         }`}
       >
@@ -79,13 +79,13 @@ const Dashboard = () => {
           {questionNum + 1 + ".) "}
           {question}
         </div>
-        <div className="flex w-full justify-around py-4 ">
+        <div className="flex flex-col items-center lg:flex-row w-full lg:justify-around py-4 ">
           {options.map((option, i) => (
             <button
               onClick={() => handleOption(option)}
               disabled={isAttempt[questionNum]}
               key={i}
-              className={`py-8 px-4 text-xl relative w-52 ${
+              className={`py-8 px-4 text-xl relative my-4 w-80 lg:m-0 lg:w-52 ${
                 selectedOption === option
                   ? selectedOption === correctOption
                     ? "bg-app-green text-app-white"
@@ -100,7 +100,7 @@ const Dashboard = () => {
             </button>
           ))}
         </div>
-        <div className="flex w-full justify-between pl-40 pr-16">
+        <div className="flex w-full justify-between pl-5 mb-2 pr-2 lg:pl-40 lg:pr-16">
           <button onClick={handlePrevious} className="p-2 bg-app-small-slate">
             ◀ Previous
           </button>

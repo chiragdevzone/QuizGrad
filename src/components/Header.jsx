@@ -21,7 +21,7 @@ const Header = () => {
   };
   return (
     <div
-      className={`flex h-16 justify-between items-center my-20y mx-12 my-7 border-b-2 border-app-small-slate  pb-7 ${
+      className={`flex h-16 justify-between items-center my-20y mx-12 my-7 border-b-2 border-app-small-slate pb-7 ${
         showTopic || showScore ? "blur-sm pointer-events-none" : ""
       }
       `}
@@ -42,7 +42,7 @@ const Header = () => {
 
       <div>
         <ul
-          className={`flex md:flex-row md:top-0 flex-col w-1/2 md:relative absolute md:border-none md:visible border-l-2 h-full bg-app-white z-10 border-app-small-slate top-[100px] right-10 md:items-center ${
+          className={`flex md:flex-row md:top-0 flex-col w-1/2 md:relative absolute md:border-none md:visible border-l-2 h-1/2 bg-app-white z-10 border-app-small-slate top-[100px] right-0 md:items-center ${
             isMenuOpen ? "" : "invisible"
           } `}
         >

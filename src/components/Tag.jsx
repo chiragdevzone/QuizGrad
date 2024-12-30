@@ -24,8 +24,6 @@ const Tag = () => {
   const dispatch = useDispatch();
   const tags = useSelector((store) => store.tag.tags);
   const handleClick = (tag) => {
-    console.log(tags.includes(tag));
-
     if (tags.includes(tag)) {
       dispatch(removeTag(tag));
     } else {

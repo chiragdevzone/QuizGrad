@@ -101,12 +101,12 @@ Please ensure that the \`correctOption\` for each question is one of the \`optio
         </div>
       </div>
       {showTopic && (
-        <div className="w-8/12 h-96 p-4 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-app-white shadow-2xl shadow-app-black ">
+        <div className="w-8/12 md:h-96 p-4 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-app-white shadow-2xl shadow-app-black ">
           <div className=" w-full flex flex-col items-center justify-between">
-            <h1 className="text-4xl mt-4 text-app-black">
+            <h1 className="lg:text-4xl md:text-2xl sm:text-xl mt-4 text-app-black">
               Choose your favorite topic
             </h1>
-            <p className="mt-4 text-app-paragraph-slate text-lg">
+            <p className="mt-4 text-app-paragraph-slate text-[10px] sm:text-sm md:text-lg lg:text-xl">
               Slelet more than 5 topics to start quiz
             </p>
             <Tag />
