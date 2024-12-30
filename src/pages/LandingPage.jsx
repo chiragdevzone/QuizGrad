@@ -73,7 +73,7 @@ Please ensure that the \`correctOption\` for each question is one of the \`optio
         }`}
       >
         <div className=" w-full md:w-1/2 h-full p-2">
-          <h2 className="text-app-black md:text-5xl lg:text-6xl whitespace-nowrap  text-4xl leading-[70px]">
+          <h2 className="text-app-black md:text-5xl lg:text-6xl whitespace-nowrap  text-3xl leading-[70px]">
             Learn <br />
             new concepts <br />
             for each question
