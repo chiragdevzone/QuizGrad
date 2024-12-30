@@ -96,7 +96,7 @@ Please ensure that the \`correctOption\` for each question is one of the \`optio
             </Link>
           </div>
         </div>
-        <div className=" w-1/2 h-full p-2 invisible md:visible flex justify-center items-center">
+        <div className=" w-1/2 h-full p-2 invisible lg:visible flex justify-center items-center">
           <img src="/hero.png" alt="hero image" />
         </div>
       </div>
@@ -113,7 +113,7 @@ Please ensure that the \`correctOption\` for each question is one of the \`optio
             {tags.length > 4 && (
               <button
                 onClick={handleQuiz}
-                className="mr-2 p-2 bg-app-yellow text-app-white self-end"
+                className="mr-2 p-2 bg-app-yellow absolute bottom-4 right-4 text-app-white self-end"
               >
                 Start Quiz
               </button>
