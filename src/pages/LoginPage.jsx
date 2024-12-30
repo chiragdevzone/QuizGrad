@@ -82,7 +82,7 @@ const LoginPage = () => {
 
           <img
             className="w-14 absolute top-2 left-0 -rotate-[28deg]"
-            src="/public/cap.png"
+            src="/cap.png"
             alt="cap-img"
           />
         </div>
@@ -136,7 +136,7 @@ const LoginPage = () => {
         </div>
       </div>
       <div className="w-1/2 h-full flex justify-center items-center">
-        <img src="/public/cap.png" alt="cap-img" />
+        <img src="/cap.png" alt="cap-img" />
       </div>
     </div>
   );

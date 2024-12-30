@@ -99,14 +99,14 @@ const Header = () => {
           <img
             onClick={() => setIsMenuOpen(false)}
             className="md:hidden w-6 cursor-pointer "
-            src="../../public/close.png"
+            src="/close.png"
             alt="close_icon"
           />
         ) : (
           <img
             onClick={() => setIsMenuOpen(true)}
             className="md:hidden w-6 cursor-pointer "
-            src="../../public/hamburger.png"
+            src="/hamburger.png"
             alt="hamburger_icon"
           />
         )}

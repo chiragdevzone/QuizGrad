@@ -97,7 +97,7 @@ Please ensure that the \`correctOption\` for each question is one of the \`optio
           </div>
         </div>
         <div className=" w-1/2 h-full p-2 invisible md:visible flex justify-center items-center">
-          <img src="/public/hero_img.png" alt="hero image" />
+          <img src="/hero.png" alt="hero image" />
         </div>
       </div>
       {showTopic && (
