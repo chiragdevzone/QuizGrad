@@ -14,7 +14,7 @@ const AboutUs = () => {
 
         <img
           className="w-10 absolute top-0 left-1 -rotate-[28deg]"
-          src="../../public/cap.png"
+          src="/cap.png"
           alt="cap-img"
         />
       </div>

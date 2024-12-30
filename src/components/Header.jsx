@@ -34,7 +34,7 @@ const Header = () => {
           </h1>
           <img
             className="w-8 absolute top-1 left-0 -rotate-[30deg]"
-            src="../../public/cap.png"
+            src="/cap.png"
             alt="cap-img"
           />
         </div>

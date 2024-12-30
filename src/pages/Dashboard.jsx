@@ -123,7 +123,7 @@ const Dashboard = () => {
         <div className=" w-8/12 h-96  bg-app-white shadow-2xl shadow-app-black  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
           <div className="flex justify-center items-center relative z-20">
             <div className="relative">
-              <img src="../../public/dayflow.png" alt="score_abstract_img" />
+              <img src="/dayflow.png" alt="score_abstract_img" />
               <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-app-white flex flex-col justify-center items-center">
                 <p className="text-3xl font-medium mb-4">Your score</p>
                 <p className="text-9xl">{yourScoreRef.current}</p>
