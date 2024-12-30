@@ -10,6 +10,7 @@ export default {
       "app-paragraph-slate": "#828282",
       "app-white": "#FFFFFF",
       "app-error-red": "#cc0000",
+      "app-green": "#4CAF50",
     },
   },
   plugins: [],

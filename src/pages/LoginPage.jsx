@@ -9,7 +9,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { app } from "../utils/firebaseConfig";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -35,7 +35,7 @@ const LoginPage = () => {
         .then((userCredential) => {
           localStorage.setItem("user", JSON.stringify(userCredential));
           dispatch(loginUser(userCredential));
-          navigate("/dashboard");
+          navigate("/");
         })
         .catch((error) => {
           setErrorMessage(error.code + "-" + error.message);
@@ -60,7 +60,7 @@ const LoginPage = () => {
         .then((userCredential) => {
           localStorage.setItem("user", JSON.stringify(userCredential));
           dispatch(loginUser(userCredential));
-          navigate("/dashboard");
+          navigate("/");
         })
         .catch((error) => {
           setErrorMessage(error.code + "-" + error.message);
@@ -73,10 +73,13 @@ const LoginPage = () => {
     <div className="flex h-[100vh] p-8">
       <div className="w-1/2 h-full  flex flex-col justify-start items-center">
         <div className="relative   px-4 py-6 ">
-          <h1 className=" text-7xl relative text-center  ">
-            <span className="text-app-yellow">Quiz</span>
-            <span className="text-app-black">Grad</span>
-          </h1>
+          <Link to="/">
+            <h1 className=" text-7xl text-center  ">
+              <span className="text-app-yellow">Quiz</span>
+              <span className="text-app-black">Grad</span>
+            </h1>
+          </Link>
+
           <img
             className="w-14 absolute top-2 left-0 -rotate-[28deg]"
             src="../../public/cap.png"
