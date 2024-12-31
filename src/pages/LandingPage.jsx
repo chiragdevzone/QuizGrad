@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ const LandingPage = () => {
   const user = useSelector((store) => store.auth.user);
   const navigate = useNavigate();
   const tags = useSelector((store) => store.tag.tags);
+  const [isLoading, setIsloading] = useState(false);
 
   const handleStart = () => {
     if (user) {
@@ -23,6 +24,7 @@ const LandingPage = () => {
   };
 
   const handleQuiz = async () => {
+    setIsloading(true);
     const prompt = `I have an array of tags that I will provide to you. Please generate 10 multiple-choice questions related to those tags. The response must be a JSON object with a single key named \`questions\`. The \`questions\` key should hold an array of objects. Each object should have the following keys: \`questionNumber\`, \`questionText\`, \`options\` (an array of 4 strings), and \`correctOption\` (a string representing the correct answer).
 
 Here is an example of what I expect:
@@ -102,20 +104,23 @@ Please ensure that the \`correctOption\` for each question is one of the \`optio
       </div>
       {showTopic && (
         <div className="w-8/12 md:h-96 p-4 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-app-white shadow-2xl shadow-app-black ">
-          <div className=" w-full flex flex-col items-center justify-between">
+          <div className=" w-full pb-16 lg:pb-0 flex flex-col items-center justify-between">
             <h1 className="lg:text-4xl md:text-2xl sm:text-xl mt-4 text-app-black">
               Choose your favorite topic
             </h1>
             <p className="mt-4 text-app-paragraph-slate text-[10px] sm:text-sm md:text-lg lg:text-xl">
               Slelet more than 5 topics to start quiz
             </p>
-            <Tag />
+            <div>
+              <Tag />
+            </div>
+
             {tags.length > 4 && (
               <button
                 onClick={handleQuiz}
-                className="mr-2 p-2 bg-app-yellow absolute bottom-4 right-4 text-app-white self-end"
+                className="mr-2 p-2  bg-app-yellow absolute bottom-4 right-4 text-app-white self-end"
               >
-                Start Quiz
+                {isLoading ? "Loading..." : " Start Quiz"}
               </button>
             )}
           </div>

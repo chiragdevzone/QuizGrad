@@ -120,14 +120,18 @@ const Dashboard = () => {
         </div>
       </div>
       {showScore && (
-        <div className=" w-5/12 lg:w-8/12  md:w-7/12 sm:w-6/12 h-96  bg-app-white shadow-2xl shadow-app-black flex flex-col justify-center items-center  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
-          <div className="relative flex justify-center items-center h-full md:w-9/12 sm:w-7/12">
-            <img src="/dayflow.png" alt="score_abstract_img" />
-            <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-app-white flex flex-col justify-center items-center">
-              <p className="lg:text-3xl md:text-2xl text-sm font-medium mb-4">
+        <div className=" w-10/12 lg:w-8/12 md:h-96 h-[50vh] bg-app-white shadow-2xl shadow-app-black flex flex-col justify-center items-center  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+          <div className="relative flex justify-center items-center h-[70%] md:w-10/12 p-2">
+            <img
+              className="w-fit"
+              src="/dayflow.png"
+              alt="score_abstract_img"
+            />
+            <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  text-app-white flex flex-col justify-center items-center">
+              <p className=" md:text-3xl text-2xl  font-medium mb-4">
                 Your score
               </p>
-              <p className="lg:text-9xl md:text-7xl text-5xl">
+              <p className="lg:text-9xl md:text-7xl text-7xl">
                 {yourScoreRef.current}
               </p>
             </div>
@@ -141,7 +145,7 @@ const Dashboard = () => {
               dispatch(resetTagAll());
               navigate("/");
             }}
-            className="md:absolute mb-4 py-3 px-6 bg-app-yellow text-app-white md:bottom-4 md:right-4"
+            className="md:absolute my-4 py-3 px-6 bg-app-yellow text-app-white md:bottom-4 md:right-4"
           >
             Complete
           </button>
